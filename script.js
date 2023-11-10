@@ -10,6 +10,10 @@ Array.from(feedback).forEach((button) => {
 	})
 })
 
+submit.addEventListener('click', () => {
+	handleModal()
+})
+
 // Functions
 const highlightButton = (element) => {
 	resetButtons()
@@ -23,4 +27,16 @@ const resetButtons = () => {
 	Array.from(feedback).forEach((button) => {
 		button.style.backgroundColor = '#1D3557'
 	})
+}
+
+const handleModal = () => {
+	if (highlighted === 'Sad') {
+		sad.showModal()
+	} else if (highlighted === 'Neutral') {
+		neutral.showModal()
+	} else if (highlighted === 'Happy') {
+		happy.showModal()
+	} else {
+		alert('Please give us a feedback')
+	}
 }

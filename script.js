@@ -9,3 +9,12 @@ Array.from(feedback).forEach((button) => {
 		highlightButton(event.target)
 	})
 })
+
+// Functions
+const highlightButton = (element) => {
+	resetButtons()
+
+	element.classList.remove('bg-neutral')
+	element.style.backgroundColor = '#059669'
+	highlighted = element.parentElement.children[1].innerText
+}

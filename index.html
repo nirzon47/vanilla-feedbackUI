@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Feedback UI</title>
+
+		<!-- Tailwind -->
+		<link rel="stylesheet" href="styles/output.css" />
+
+		<!-- Script -->
+		<script src="script.js" defer></script>
+
+		<!-- Meta tags -->
+		<meta
+			name="description"
+			content="Simple Feedback screen made with vanilla JavaScript."
+		/>
+		<meta
+			name="keywords"
+			content="vanilla, javascript, feedback, ui, feedback ui"
+		/>
+		<meta name="author" content="Nirzon Taru Karmakar" />
+		<meta name="robots" content="index, follow" />
+	</head>
+	<body
+		class="grid w-screen h-screen font-mono place-content-center text-zinc-900"
+	>
+		<main class="shadow-2xl card w-96 bg-secondary">
+			<!-- Card -->
+			<section class="card-body">
+				<h1 class="mb-4 text-3xl font-bold text-center">Feedback UI</h1>
+				<p class="mb-8 font-sans text-lg text-center text-zinc-600">
+					Please rate us for our services.
+				</p>
+				<section class="grid grid-cols-3 gap-4 mb-4">
+					<div class="text-center">
+						<button
+							class="grid w-24 h-24 duration-500 outline-none bg-neutral rounded-xl hover:bg-emerald-600 place-content-center feedback"
+						>
+							<span
+								class="inline-block w-16 h-16 bg-cover pointer-events-none bg-sad"
+							></span>
+						</button>
+						<p class="mt-4 text-sm">Sad</p>
+					</div>
+					<div class="text-center">
+						<button
+							class="grid w-24 h-24 duration-500 outline-none bg-neutral rounded-xl hover:bg-emerald-600 place-content-center feedback"
+						>
+							<span
+								class="inline-block w-16 h-16 bg-cover pointer-events-none bg-meh"
+							></span>
+						</button>
+						<p class="mt-4 text-sm">Neutral</p>
+					</div>
+					<div class="text-center">
+						<button
+							class="grid w-24 h-24 duration-500 outline-none bg-neutral rounded-xl hover:bg-emerald-600 place-content-center feedback"
+						>
+							<span
+								class="inline-block w-16 h-16 bg-cover pointer-events-none bg-happy"
+							></span>
+						</button>
+						<p class="mt-4 text-sm">Happy</p>
+					</div>
+				</section>
+				<button class="font-sans capitalize btn-primary btn" id="submit">
+					Send Review
+				</button>
+
+				<!-- Modal for sad -->
+				<dialog id="sad" class="font-sans text-center modal">
+					<div class="modal-box">
+						<h3 class="text-lg font-bold">Oh that isn't good!</h3>
+						<p class="py-4">
+							We are sorry to hear about your experience 😞<br />
+							We will forward this feedback to improve your experience.
+						</p>
+
+						<p class="py-4 text-sm">
+							Click outside the dialog or press ESC to close this pop up
+						</p>
+					</div>
+					<form method="dialog" class="modal-backdrop">
+						<button>Close</button>
+					</form>
+				</dialog>
+
+				<!-- Modal for neutral -->
+				<dialog id="neutral" class="font-sans text-center modal">
+					<div class="modal-box">
+						<h3 class="text-lg font-bold">Thank you for your feedback!</h3>
+						<p class="py-4">
+							Your feedback ensures our team to improve 😇<br />
+							We will try to do better.
+						</p>
+
+						<p class="py-4 text-sm">
+							Click outside the dialog or press ESC to close this pop up
+						</p>
+					</div>
+					<form method="dialog" class="modal-backdrop">
+						<button>Close</button>
+					</form>
+				</dialog>
+
+				<!-- Modal for happy -->
+				<dialog id="happy" class="font-sans text-center modal">
+					<div class="modal-box">
+						<h3 class="text-lg font-bold">That's awesome!</h3>
+						<p class="py-4">
+							We are thrilled to hear that! 😎<br />
+							We will try to do even better.
+						</p>
+
+						<p class="py-4 text-sm">
+							Click outside the dialog or press ESC to close this pop up
+						</p>
+					</div>
+					<form method="dialog" class="modal-backdrop">
+						<button>Close</button>
+					</form>
+				</dialog>
+			</section>
+		</main>
+	</body>
+</html>

@@ -18,3 +18,9 @@ const highlightButton = (element) => {
 	element.style.backgroundColor = '#059669'
 	highlighted = element.parentElement.children[1].innerText
 }
+
+const resetButtons = () => {
+	Array.from(feedback).forEach((button) => {
+		button.style.backgroundColor = '#1D3557'
+	})
+}
